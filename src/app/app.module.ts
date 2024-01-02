@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CombineForkComponent } from './combine-fork/combine-fork.component';
 import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { SubjectComponent } from './subject/subject.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CombineForkComponent,
     ConcatmapComponent,
-    SubjectComponent
+    SubjectComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
