@@ -24,4 +24,29 @@ export const initialState: State = {
   error: '',
 };
 
-export const reducer = createReducer(initialState);
+// export const reducer = createReducer(initialState);
+export function reducer(state = initialState, action: UserActions): State {
+  switch (action.type) {
+    case UserActionTypes.LoadUsers:
+      return {
+        ...state,
+      };
+
+    case UserActionTypes.LoadUsersSuccess:
+      return {
+        ...state,
+        users: action.payload.data,
+        error: '',
+      };
+
+    case UserActionTypes.LoadUsersFailure:
+      return {
+        ...state,
+        users: [],
+        error: action.payload.error,
+      };
+
+    default:
+      return state;
+  }
+}

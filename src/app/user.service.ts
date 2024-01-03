@@ -10,11 +10,13 @@ import { IUser } from './user/user';
 })
 export class UserService {
   private userUrl = 'assets/users.json';
+
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<IUser[]> {
+    console.log('data.....');
     return this.http.get<IUser[]>(this.userUrl).pipe(
-      //  tap(data => console.log('All: ' + JSON.stringify(data))),
+      tap((data) => console.log('All: ' + JSON.stringify(data))),
       catchError(this.handleError)
     );
   }

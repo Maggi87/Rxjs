@@ -18,10 +18,10 @@ export class UserComponent {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    alert('Hello');
+    // alert('Hello');
     this.store.dispatch(new UserActions.LoadUsers()); // action dispatch
     this.store.pipe(select(fromUser.getUsers)).subscribe((users) => {
-      console.log(users);
+      // console.log('Data......', users);
       this.users = users;
     }); // selector subscribe
 

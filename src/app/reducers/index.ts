@@ -13,7 +13,7 @@ export interface State {
   [fromUser.userFeatureKey]: fromUser.State;
 }
 
-export const reducers: ActionReducerMap<State> = {
+export const reducers: ActionReducerMap<State, any> = {
   [fromUser.userFeatureKey]: fromUser.reducer,
 };
 
